@@ -30,7 +30,7 @@ class Entity extends Component {
     const { connectDragSource, isDragging, id, text, location} = this.props; //required
     //wrapping with connectDragSource required
     return connectDragSource(
-      <div className="entity">
+      <div className={`entity ${isDragging ? `is-dragging` : ``}`}>
         {text}
 
       </div>

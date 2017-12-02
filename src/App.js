@@ -64,8 +64,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        Some content
-
         {containers.map(({id, text, contents}, index) => {
           return <Container id={id} text={text} onDrop={this.onDrop} contents={contents}/>
         })}
