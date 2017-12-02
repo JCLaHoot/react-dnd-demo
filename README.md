@@ -1,8 +1,7 @@
-I created this demo because I had trouble figuring out the examples in the react-dnd documentation, and found that it wasn't sufficiently generic. This is the demo that I would have liked to have had from the get go. Feel free to add or remove
+I created this demo because I had trouble figuring out the examples in the react-dnd documentation, and found that it wasn't sufficiently generic. This is the demo that I would have liked to have had from the get go.
 
 
-
-To see the demo:
+# To install:
 
 ### 1. Download the repo
 
