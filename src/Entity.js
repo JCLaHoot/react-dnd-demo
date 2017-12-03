@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 import { ItemTypes } from './Constants';
 import { DragSource } from 'react-dnd';
 
+// required. This contains methods that will describe how the draggable item
+// will react when dragged.
+// see http://react-dnd.github.io/react-dnd/docs-drag-source.html for more details
 const entitySource = {
-  // required
+  // beginDrag must be implemented. It returns a plain JS object describing the object being dragged
   beginDrag(props) {
     const item = {
       id: props.id,
@@ -12,12 +15,10 @@ const entitySource = {
       location: props.location
     };
     return item;
-  },
-  endDrag(props, monitor, component) {
-    // return props.handleDrop(props.src)
   }
 };
 
+// retrieves info on the drag and drop state from the monitor.
 const collect = (connect, monitor) => {
   return {
     connectDragSource: connect.dragSource(), //required
@@ -27,16 +28,16 @@ const collect = (connect, monitor) => {
 
 class Entity extends Component {
   render() {
-    const { connectDragSource, isDragging, id, text, location} = this.props; //required
-    //wrapping with connectDragSource required
+    const { connectDragSource, isDragging, id, text, location} = this.props;
+    //wrapping the component with connectDragSource is required
+    // here I also change the class name depending on whether the component is being dragged or not.
     return connectDragSource(
       <div className={`entity ${isDragging ? `is-dragging` : ``}`}>
         {text}
-
       </div>
     );
   }
 }
 
-//required
+//The draggable item is wrapped in DragSource. Item type is specified here as well.
 export default DragSource(ItemTypes.ENTITY, entitySource, collect)(Entity);

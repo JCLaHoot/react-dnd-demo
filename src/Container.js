@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+
 import { ItemTypes } from './Constants';
 import { DropTarget } from 'react-dnd';
 
 import Entity from './Entity';
 
 
-
+// required. This contains methods that will describe how the container
+// will react when items are dragged into it.
 const containerTarget = {
   drop(props, monitor) {
-    console.log("item dragged: ", monitor.getItem());
-    console.log("container: ", props)
-    props.onDrop(props, monitor.getItem());
+    // console.log("item dragged: ", monitor.getItem());
+    // console.log("container: ", props)
+    props.onDrop(props, monitor.getItem()); //onDrop is defined in the top-level component
   }
 };
 
+// collect function is required.
 const collect = (connect, monitor) => {
   return {
     connectDropTarget: connect.dropTarget()
@@ -24,18 +26,9 @@ const collect = (connect, monitor) => {
 
 class Container extends Component {
 
-  constructor(props, contents) {
-    super(props);
-    this.state = {
-      contents
-    }
-  }
-
-
   render() {
-
     const {connectDropTarget, text, contents} = this.props;
-
+    //wrapping the component with connectDropTarget is required
     return connectDropTarget(
       <div className="container">
         {text}
@@ -47,4 +40,5 @@ class Container extends Component {
   }
 }
 
+//The draggable item is wrapped in a DropTarget. Item type accepted is specified here as well.
 export default DropTarget(ItemTypes.ENTITY, containerTarget, collect)(Container);
