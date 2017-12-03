@@ -1,4 +1,4 @@
-I created this demo because I had trouble figuring out the examples in the react-dnd documentation, and found that it wasn't sufficiently generic. This is the demo that I would have liked to have had from the get go.
+I created this demo because I had trouble figuring out the examples in the react-dnd documentation, and found that it wasn't sufficiently generic. This is the demo that I would have liked to have had from the get go. I'm using the touch backend because > 55% of web traffic is now mobile, so I figure it's the most likely use case.
 
 ![dnd](https://user-images.githubusercontent.com/12401777/33520801-fed413be-d78f-11e7-93ca-9dc26569788c.gif)
 
