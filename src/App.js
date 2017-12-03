@@ -3,6 +3,7 @@ import './App.css';
 
 import { DragDropContext } from 'react-dnd'; // required in top-level component
 import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
+// import HTML5Backend from 'react-dnd-html5-backend'; // disabled in order to try Touch backend
 
 import Container from './Container'; // drop-zone components. Not part of react-dnd
 
@@ -82,5 +83,5 @@ class App extends Component {
 }
 
 // The entire top-level component is wrapped in the DragDropContext, like so:
-// DragDropContext(HTML5Backend)(YOUR_TOP_LEVEL_COMPONENT_NAME)
+// DragDropContext(BACKEND_GOES_HERE)(YOUR_TOP_LEVEL_COMPONENT_NAME)
 export default DragDropContext(TouchBackend({enableMouseEvents:true}))(App);
