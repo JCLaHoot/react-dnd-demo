@@ -7,7 +7,12 @@ import TouchBackend from 'react-dnd-touch-backend'; // required in top-level com
 
 import Container from './Container'; // drop-zone components. Not part of react-dnd
 
+const isTouchDevice = () => {
+  alert( 'ontouchstart' in document.documentElement);
+    return 'ontouchstart' in document.documentElement;
+}
 
+isTouchDevice();
 class App extends Component {
 
 
