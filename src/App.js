@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { DragDropContext } from 'react-dnd'; // required in top-level component
-import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
 // import HTML5Backend from 'react-dnd-html5-backend'; // disabled in order to try Touch backend
+import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
 
 import Container from './Container'; // drop-zone components. Not part of react-dnd
 
-const isTouchDevice = () => {
-  alert( 'ontouchstart' in document.documentElement);
-    return 'ontouchstart' in document.documentElement;
-}
 
-isTouchDevice();
+// const isTouchDevice = 'ontouchstart' in document.documentElement;
+// if (isTouchDevice) {
+//   import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
+// }
+// else {
+//   import HTML5Backend from 'react-dnd-html5-backend'; // disabled in order to try Touch backend
+// }
+
 class App extends Component {
 
 
