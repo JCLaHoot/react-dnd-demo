@@ -1,6 +1,6 @@
 I created this demo because I had trouble figuring out the examples in the react-dnd documentation, and found that it wasn't sufficiently generic. This is the demo that I would have liked to have had from the get go.
 
-
+![dnd](https://user-images.githubusercontent.com/12401777/33520801-fed413be-d78f-11e7-93ca-9dc26569788c.gif)
 # To install:
 
 ### 1. Download the repo
@@ -18,7 +18,7 @@ If you don't have npm installed, you can find it here, bundled with Node: https:
 
   `npm start`
   
-  
+  ---
   
   
 The comments in the code *should* be enough to figure out how this implementation of the library actually works. If it's not clear, just open an issue and I'll check it out, or contribute to this demo by making a pull request.
