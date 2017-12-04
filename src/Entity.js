@@ -22,20 +22,23 @@ const entitySource = {
 const collect = (connect, monitor) => {
   return {
     connectDragSource: connect.dragSource(), //required
+    connectDragPreview: connect.dragPreview(), //required if using the touch backend
+
     isDragging: monitor.isDragging()
   }
 }
 
 class Entity extends Component {
   render() {
-    const { connectDragSource, isDragging, id, text, location} = this.props;
-    //wrapping the component with connectDragSource is required
+    const { connectDragSource, connectDragPreview, isDragging, id, text, location} = this.props;
+    // wrapping the component with connectDragSource is required
+    // wrapping in connectDragPreview required if using the touch backend
     // here I also change the class name depending on whether the component is being dragged or not.
-    return connectDragSource(
+    return connectDragPreview(connectDragSource(
       <div className={`entity ${isDragging ? `is-dragging` : ``}`}>
         {text}
       </div>
-    );
+    ));
   }
 }
 

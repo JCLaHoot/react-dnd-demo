@@ -14,9 +14,9 @@ body {
 }
 
 .is-dragging {
-  display: none;
-  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  filter: opacity(0.75);
+  /*display: none;*/
+  /*box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);*/
+  /*filter: opacity(0.75);*/
 }
 
 .container {
@@ -27,4 +27,18 @@ body {
   padding: 1em;
   margin: 1em;
   background-color: #607d8b;
+}
+
+/*REQUIRED FOR TOUCH BACKEND*/
+.item-preview {
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.item-preview .entity {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+
 }

@@ -4,10 +4,11 @@ import './App.css';
 import { DragDropContext } from 'react-dnd'; // required in top-level component
 // import HTML5Backend from 'react-dnd-html5-backend'; // disabled in order to try Touch backend
 import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
+import EntityPreview from './EntityPreview'; //required if using the Touch backend
 
 import Container from './Container'; // drop-zone components. Not part of react-dnd
 
-
+// tests whether its a touch screen or not. The makers of the touch backend recomment using the HTML5 one on desktop
 // const isTouchDevice = 'ontouchstart' in document.documentElement;
 // if (isTouchDevice) {
 //   import TouchBackend from 'react-dnd-touch-backend'; // required in top-level component
@@ -78,13 +79,13 @@ class App extends Component {
   render() {
     const { containers } = this.state;
     // We map through the list of containers and populate the right data into them
+    // The Entity Preview is ONLY required when implementing the touch backend.
     return (
       <div className="App">
         {containers.map(({id, text, contents}, index) => {
           return <Container id={id} text={text} onDrop={this.onDrop} contents={contents}/>
         })}
-
-
+        <EntityPreview key="__preview" name="Item" />
       </div>
     );
   }
